@@ -1059,8 +1059,16 @@
             this.options.resize.max_size[0], this.cols - this.resize_wgd.col + 1);
         this.resize_max_size_y = this.resize_wgd.max_size_y ||
             this.options.resize.max_size[1];
-        this.resize_min_size_x = this.resize_wgd.min_size_x || options.resize.min_size[0] || 1;
-        this.resize_min_size_y = this.resize_wgd.min_size_y || options.resize.min_size[1] || 1;
+
+        if(this.options.resize.min_size){
+          var min_size_x = this.options.resize.min_size[0];
+          var min_size_y = this.options.resize.min_size[1];
+        }else{
+          var min_size_x = 1;
+          var min_size_y = 1;
+        }
+        this.resize_min_size_x = this.resize_wgd.min_size_x || min_size_x;
+        this.resize_min_size_y = this.resize_wgd.min_size_y || min_size_y;
 
         this.resize_dir = {
             right: ui.$player.is('.' + this.resize_handle_class + '-x'),
