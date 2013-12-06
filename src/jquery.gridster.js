@@ -241,10 +241,9 @@
 
         this.$widgets = this.$widgets.add($w);
 
-        this.register_widget($w);
-
         this.add_faux_rows(size_y);
-        //this.add_faux_cols(pos.size_x);
+
+        this.register_widget($w);
 
         if (max_size) {
             this.set_widget_max_size($w, max_size);
