@@ -958,7 +958,7 @@
 
         this.register_widget($w);
 
-        this.add_faux_rows(pos.size_y);
+        this.add_faux_rows(size_y);
         //this.add_faux_cols(pos.size_x);
 
         if (max_size) {
